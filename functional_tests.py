@@ -10,35 +10,14 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
-        # Edith has heard about a cool new online to-do app. She goes
-        # to check out its homepage
+    def test_title_is_kevin_rz(self):
         self.browser.get('http://localhost:8000')
+        self.assertIn('Kevin RZ', self.browser.title)
 
-        # She notices the page title and header mention to-do lists
-        self.assertIn('To-Do', self.browser.title)
-        self.fail('Finish the test!')
-
-        # She is invited to enter a to-do item straight away
-
-        # She types "Buy peacock feathers" into a text box (Edith's hobby
-        # is tying fly-fishing lures)
-
-        # When she hits enter, the page updates, and now the page lists
-        # "1: Buy peacock feathers" as an item in a to-do list
-
-        # There is still a text box inviting her to add another item. She
-        # enters "Use peacock feathers to make a fly" (Edith is very methodical)
-
-        # The page updates again, and now shows both items on her list
-
-        # Edith wonders whether the site will remember her list. Then she sees
-        # that the site has generated a unique URL for her -- there is some
-        # explanatory text to that effect.
-
-        # She visits that URL - her to-do list is still there.
-
-        # Satisfied, she goes back to sleep
+    def test_homepage_contain_name_kevin_raikhan_zain(self):
+        self.browser.get('http://localhost:8000')
+        name = self.browser.find_element_by_id("full_name").text
+        self.assertIn('Kevin Raikhan Zain', name)
 
 
 if __name__ == '__main__':
