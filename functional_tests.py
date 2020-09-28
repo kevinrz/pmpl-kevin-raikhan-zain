@@ -26,8 +26,13 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_homepage_contain_email(self):
         self.browser.get('http://localhost:8000')
-        name = self.browser.find_element_by_id("email").text
-        self.assertIn('kevinraikhan@gmail.com', name)
+        email = self.browser.find_element_by_id("email").text
+        self.assertIn('kevinraikhan@gmail.com', email)
+
+    def test_homepage_contain_linkedin(self):
+        self.browser.get('http://localhost:8000')
+        linkedin = self.browser.find_element_by_id("linkedin").text
+        self.assertIn('LinkedIn', linkedin)
 
 
 if __name__ == '__main__':

@@ -23,4 +23,5 @@ class HomePageTest(TestCase):
         self.assertIn('<title>Kevin RZ</title>', html)
         self.assertIn('<span id="full_name">Kevin Raikhan Zain</span>', html)
         self.assertIn('<a href="mailto:kevinraikhan@gmail.com" id="email">kevinraikhan@gmail.com</a>', html)
+        self.assertIn('<a href="https://linkedin.com/in/kevin-raikhan-zain/" id="linkedin">LinkedIn</a>', html)
         self.assertTrue(html.endswith('</html>'))
