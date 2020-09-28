@@ -19,6 +19,16 @@ class NewVisitorTest(unittest.TestCase):
         name = self.browser.find_element_by_id("full_name").text
         self.assertIn('Kevin Raikhan Zain', name)
 
+    def test_homepage_contain_name_kevin_raikhan_zain(self):
+        self.browser.get('http://localhost:8000')
+        name = self.browser.find_element_by_id("full_name").text
+        self.assertIn('Kevin Raikhan Zain', name)
+
+    def test_homepage_contain_email(self):
+        self.browser.get('http://localhost:8000')
+        name = self.browser.find_element_by_id("email").text
+        self.assertIn('kevinraikhan@gmail.com', name)
+
 
 if __name__ == '__main__':
     unittest.main()
